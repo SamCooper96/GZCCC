@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<actionlist>
+	
+	<action name="Query" class="cn.gzccc.idiom.action.QueryAction" desc="成语查询">
+		<view>/views/idiom/Idiom.jsp</view>
+	</action>
+	<action name="Dragon" class="cn.gzccc.idiom.action.DragonAction" desc="成语接龙">
+		<view>/views/idiom/Dragon.jsp</view>
+	</action>
+	<action name="Append" class="cn.gzccc.idiom.action.AppendAction" desc="添加成语">
+		<view>/views/idiom/Append.jsp</view>
+	</action>
+	<action name="Remove" class="cn.gzccc.idiom.action.RemoveAction" desc="删除成语">
+		<view>/views/idiom/Remove.jsp</view>
+	</action>
+	
+</actionlist>
