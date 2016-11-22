@@ -20,13 +20,21 @@
 		<table width="500px" align="center" border="1px">
 			<tr>
 				<td>1</td>
-				<td><a href="<%=path%>/views/cookie/WriteCookie.jsp"> → 写Cookie</a></td>
+				<td><a href="<%=path%>/views/cookie/WriteCookie.jsp"> →
+						写Cookie</a></td>
 				<td>向客户端本地写入Cooike文件。</td>
 			</tr>
 			<tr>
 				<td>2</td>
-				<td><a href="<%=path%>/views/cookie/ReadCookie.jsp"> → 读Cookie</a></td>
+				<td><a href="<%=path%>/views/cookie/ReadCookie.jsp"> →
+						读Cookie</a></td>
 				<td>读取客户端本地的Cooike信息。</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td><a href="<%=path%>/views/cookie/Register1.jsp">
+				用户注册</a></td>
+				<td>分页面注册</td>
 			</tr>
 		</table>
 	</div>

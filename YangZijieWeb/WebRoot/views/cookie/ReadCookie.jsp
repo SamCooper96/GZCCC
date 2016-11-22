@@ -17,17 +17,17 @@
 <body>
 	<h1>读取Cookie</h1>
 	<br />
-<%
-Cookie[] cookies = request.getCookies();// 获取客户端的Cookie数据。
-if(cookies != null){
-	for(Cookie cookie:cookies){
-		String name = cookie.getName();
-		String value = cookie.getValue();
-		int maxAge = cookie.getMaxAge();// 注意单位是秒。
-		out.println("名字："+name+"；内容："+value+"；生存期（秒）："+maxAge+"。<br />");
-	}
-}
-
-%>
+	<%
+		Cookie[] cookies = request.getCookies();// 获取客户端的Cookie数据。
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				String name = cookie.getName();
+				String value = cookie.getValue();
+				int maxAge = cookie.getMaxAge();// 注意单位是秒。
+				out.println("名字：" + name + "；内容：" + value + "；生存期（秒）："
+						+ maxAge + "。<br />");
+			}
+		}
+	%>
 </body>
 </html>
