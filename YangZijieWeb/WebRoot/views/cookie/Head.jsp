@@ -21,6 +21,18 @@
 		ck.setMaxAge(30 * 60);// 设置有效期为“30分钟”（若不设置则无生存期；若为0则表示要删除某个Cooike）。
 		response.addCookie(ck);// 将这个Cookie发送给客户端
 	}
+
+	// 从客户端的Cookie数据中读取有关信息，如果能读出，则填入对应的文本框中（回读信息）。
+	Cookie[] cookies = request.getCookies();// 获取客户端的Cookie数据。
+	if (cookies != null) {
+		for (Cookie cookie : cookies) {
+			String key = cookie.getName();
+			String value = cookie.getValue();
+			// 注意这里会出现乱码问题，要解决乱码。
+			value = new String(value.getBytes("ISO-8859-1"), "UTF-8");
+			pageContext.setAttribute(key, value);// 将键-值对配置到当前页面对象中。
+		}
+	}
 %>
 
 <!DOCTYPE html>

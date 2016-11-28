@@ -26,4 +26,8 @@
   	<servlet-name>IdiomControllor</servlet-name>
   	<url-pattern>*.idiom</url-pattern>
   </servlet-mapping>
+  <!-- 监听器 -->
+  <listener>
+  	<listener-class>cn.gzccc.env.MyListener</listener-class>
+  </listener>
 </web-app>
