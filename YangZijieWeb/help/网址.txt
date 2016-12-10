@@ -5,3 +5,10 @@ drv = com.mysql.jdbc.Driver
 url = jdbc:mysql://127.0.0.1:3306/idiomdb
 usr = idiom
 pwd = password
+
+
+db.properities的设置(老师数据库)：
+drv = com.mysql.jdbc.Driver
+url = jdbc:mysql://10.0.20.9:3306/idiomdb
+usr = student
+pwd =password

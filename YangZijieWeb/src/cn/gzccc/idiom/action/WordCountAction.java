@@ -27,11 +27,19 @@ public class WordCountAction extends BaseAction {
 		String words = paramMap.get("words");
 
 		/* 3.交易细节******************** */
-		
+		int countNum = 0;
+		if(words==null || words.trim().length()==0){
+			message = "文本不能为空";
+		}else{
+			message = null;
+			countNum = words.trim().length();
+		}
+		result.put("message", message);
 		/* *************************** */
 
 		// 4.将结果返回给前端页面
-		result.put("words", words);
+		
+		result.put("countNum", countNum);
 		return result;// 将结果返回
 	}
 

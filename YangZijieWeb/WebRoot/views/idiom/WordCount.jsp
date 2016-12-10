@@ -10,10 +10,11 @@
 	<div align="center">
 	<form name="theform" action="${_PATH}/WordCount.idiom" method="post">
 		<h3>请输入文本内容：</h3>
-		<textarea name="words" rows="20" cols="80">[文本内容]</textarea>
+		<textarea name="words" rows="15" cols="80">[文本内容]</textarea>
 		<br /> <br />
 		<input type="button" name="ok" value="统计字数" onclick="this.form.submit()" />
-		<h3>字数统计：${words}</h3>
+		<h3>字数统计：${countNum}</h3>
+		<h3>${message}</h3>
 	</form>
 	</div>
 </body>
