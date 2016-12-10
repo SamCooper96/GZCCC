@@ -10,6 +10,9 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 	pageContext.setAttribute("_PATH", path);//当前页面对象。
+	// 获取当前日期。
+	String date = cn.gzccc.util.DateUtil.getCurrentDate();
+	pageContext.setAttribute("_DATE", date);
 	//获取传入参数，将各个参数写到客户端本地（获取前端页面的所有传入参数，解决字符编码问题）。
 	java.util.Enumeration<String> paraNames = request
 			.getParameterNames();// 参数名字集。

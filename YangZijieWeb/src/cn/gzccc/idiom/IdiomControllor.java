@@ -53,32 +53,37 @@ public class IdiomControllor extends HttpServlet {
 		if(actionConfig != null){
 			className = actionConfig.get("class");
 			page = actionConfig.get("view");
-		}
-
-		// 找到相应的交易类并执行
-		IAction action;
-		try {
-			action = (IAction) Class.forName(className).newInstance();
-			Map<String, Object> result = action.doAction(paramMap);// 执行交易
-			Iterator<String> keys = result.keySet().iterator();// 键集
-			while (keys.hasNext()) {
-				String key = keys.next();
-				Object obj = result.get(key);
-				request.setAttribute(key, obj);// 将交易执行返回的结果输出给前端。
+			// 找到相应的交易类并执行
+			IAction action;
+			try {
+				action = (IAction) Class.forName(className).newInstance();
+				action.setSession(request.getSession());
+				action.setRequest(request);// 向交易类传入请求对象。
+				Map<String, Object> result = action.doAction(paramMap);// 执行交易
+				Iterator<String> keys = result.keySet().iterator();// 键集
+				while (keys.hasNext()) {
+					String key = keys.next();
+					Object obj = result.get(key);
+					request.setAttribute(key, obj);// 将交易执行返回的结果输出给前端。
+				}
+				// 判断后台交易是否有配置错误信息，若有，则定向到出错页面。
+				String error = action.getError();
+				if (error!=null && error.length()>0) {
+					page = "/views/idiom/Error.jsp";
+					request.setAttribute("_ERROR", error);
+				}
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				System.err.println("交易执行失败..." + e.getMessage());
+			} catch (ClassNotFoundException e) {
+				System.err.println("交易执行失败，找不到类：" + className);
 			}
-			// 判断后台交易是否有配置错误信息，若有，则定向到出错页面。
-			String error = action.getError();
-			if (error!=null && error.length()>0) {
-				page = "/views/idiom/Error.jsp";
-				request.setAttribute("_ERROR", error);
-			}
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			System.err.println("交易执行失败..." + e.getMessage());
-		} catch (ClassNotFoundException e) {
-			System.err.println("交易执行失败，找不到类：" + className);
+		}else{
+			page = "/views/idiom/Error.jsp";
+			request.setAttribute("_ERROR", "找不到交易配置["+txcode+"]");
 		}
+		
 
 		// 发布到目标页面。
 		ServletContext application = super.getServletContext();

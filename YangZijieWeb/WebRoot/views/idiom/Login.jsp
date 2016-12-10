@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <form name="theform" action="<%=path%>/views/idiom/DoLogin.jsp" method="post">
+  <form name="theform" action="<%=path%>/Login.idiom" method="post">
 	  <table width="300" align="center" border="1">
 	  	<tr>
 	  		<td align="right">用户账号：</td>

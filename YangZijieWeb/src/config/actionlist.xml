@@ -2,6 +2,9 @@
 
 <actionlist>
 	
+	<action name="Login" class="cn.gzccc.idiom.action.LoginAction" desc="成语登录">
+		<view>/views/idiom/Welcome.jsp</view>
+	</action>
 	<action name="Query" class="cn.gzccc.idiom.action.QueryAction" desc="成语查询">
 		<view>/views/idiom/Idiom.jsp</view>
 	</action>
@@ -13,6 +16,9 @@
 	</action>
 	<action name="Remove" class="cn.gzccc.idiom.action.RemoveAction" desc="删除成语">
 		<view>/views/idiom/Remove.jsp</view>
+	</action>
+	<action name="WordCount" class="cn.gzccc.idiom.action.WordCountAction" desc="字数统计">
+		<view>/views/idiom/WordCount.jsp</view>
 	</action>
 	
 </actionlist>

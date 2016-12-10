@@ -5,10 +5,17 @@ package cn.gzccc.idiom;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 public interface IAction {
 
 	public Map<String, Object> doAction(Map<String, String> paramMap);
 
 	public String getError();
+	
+	public void setSession(HttpSession session);
+	
+	public void setRequest(HttpServletRequest request);
 	
 }

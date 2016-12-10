@@ -17,6 +17,7 @@
 
 <body>
 	<div id="wrap">
+		<p align="center">版本号：${_VERSION}</p>
 		<table width="500px" align="center" border="1px">
 			<tr>
 				<td width="40px">序号</td>
