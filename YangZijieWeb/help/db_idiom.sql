@@ -25,4 +25,17 @@ remark     VARCHAR(64),
 PRIMARY KEY (item_id)
 );
 
+##论坛表
+DROP TABLE forum;
+CREATE TABLE forum
+(
+forum_id  VARCHAR(24) NOT NULL,
+title     VARCHAR(128) NOT NULL,
+content   TEXT,
+author    VARCHAR(32) NOT NULL,
+make_date VARCHAR(24) NOT NULL,
+remark    VARCHAR(64),
+PRIMARY KEY (forum_id)
+);
+
 

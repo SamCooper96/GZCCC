@@ -48,4 +48,13 @@
 		<servlet-name>IdiomControllor</servlet-name>
 		<url-pattern>*.idiom</url-pattern>
 	</servlet-mapping>
+	<!-- 控制器（论坛） -->
+	<servlet>
+		<servlet-name>ForumControllor</servlet-name>
+		<servlet-class>cn.gzccc.bbs.Controllor</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ForumControllor</servlet-name>
+		<url-pattern>*.bbs</url-pattern>
+	</servlet-mapping>
 </web-app>

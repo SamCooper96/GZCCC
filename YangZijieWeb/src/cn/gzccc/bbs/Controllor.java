@@ -1,7 +1,7 @@
 /*
- * 成语项目的Servlet
+ * 控制器
  */
-package cn.gzccc.idiom;
+package cn.gzccc.bbs;
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class IdiomControllor extends HttpServlet {
+public class Controllor extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
@@ -49,7 +49,7 @@ public class IdiomControllor extends HttpServlet {
 		String uri = request.getRequestURI();
 		String txcode = uri.substring(uri.lastIndexOf('/') + 1);
 		Map<String, String> actionConfig = getActionConfig(txcode);
-		if(actionConfig != null){
+		if (actionConfig != null) {
 			className = actionConfig.get("class");
 			page = actionConfig.get("view");
 			// 找到相应的交易类并执行
@@ -67,8 +67,8 @@ public class IdiomControllor extends HttpServlet {
 				}
 				// 判断后台交易是否有配置错误信息，若有，则定向到出错页面。
 				String error = action.getError();
-				if (error!=null && error.length()>0) {
-					page = "/views/idiom/Error.jsp";
+				if (error != null && error.length() > 0) {
+					page = "/views/forum/Error.jsp";
 					request.setAttribute("_ERROR", error);
 				}
 			} catch (InstantiationException e) {
@@ -78,11 +78,10 @@ public class IdiomControllor extends HttpServlet {
 			} catch (ClassNotFoundException e) {
 				System.err.println("交易执行失败，找不到类：" + className);
 			}
-		}else{
-			page = "/views/idiom/Error.jsp";
-			request.setAttribute("_ERROR", "找不到交易配置["+txcode+"]");
+		} else {
+			page = "/views/forum/Error.jsp";
+			request.setAttribute("_ERROR", "找不到交易配置[" + txcode + "]");
 		}
-		
 
 		// 发布到目标页面。
 		ServletContext application = super.getServletContext();
@@ -100,7 +99,7 @@ public class IdiomControllor extends HttpServlet {
 			// 装载配置文件
 			java.io.FileInputStream fis = null;
 			try {
-				String path = IdiomControllor.class.getClassLoader()
+				String path = Controllor.class.getClassLoader()
 						.getResource("config/").getPath();
 				path = java.net.URLDecoder.decode(path, "UTF-8");// 解决路径中的中文乱码
 				java.io.File file = new java.io.File(path + "actionlist.xml");// 文件对象,并联配置文件

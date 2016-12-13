@@ -1,24 +1,30 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 
 <actionlist>
-	
-	<action name="Login" class="cn.gzccc.idiom.action.LoginAction" desc="成语登录">
+	<!-- 成语交易 -->
+	<action name="Login.idiom" class="cn.gzccc.idiom.action.LoginAction" desc="成语登录">
 		<view>/views/idiom/Welcome.jsp</view>
 	</action>
-	<action name="Query" class="cn.gzccc.idiom.action.QueryAction" desc="成语查询">
+	<action name="Query.idiom" class="cn.gzccc.idiom.action.QueryAction" desc="成语查询">
 		<view>/views/idiom/Idiom.jsp</view>
 	</action>
-	<action name="Dragon" class="cn.gzccc.idiom.action.DragonAction" desc="成语接龙">
+	<action name="Dragon.idiom" class="cn.gzccc.idiom.action.DragonAction" desc="成语接龙">
 		<view>/views/idiom/Dragon.jsp</view>
 	</action>
-	<action name="Append" class="cn.gzccc.idiom.action.AppendAction" desc="添加成语">
+	<action name="Append.idiom" class="cn.gzccc.idiom.action.AppendAction" desc="添加成语">
 		<view>/views/idiom/Append.jsp</view>
 	</action>
-	<action name="Remove" class="cn.gzccc.idiom.action.RemoveAction" desc="删除成语">
+	<action name="Remove.idiom" class="cn.gzccc.idiom.action.RemoveAction" desc="删除成语">
 		<view>/views/idiom/Remove.jsp</view>
 	</action>
-	<action name="WordCount" class="cn.gzccc.idiom.action.WordCountAction" desc="字数统计">
+	<action name="WordCount.idiom" class="cn.gzccc.idiom.action.WordCountAction" desc="字数统计">
 		<view>/views/idiom/WordCount.jsp</view>
 	</action>
-	
+	<!-- 论坛交易 -->
+	<action name="Login.bbs" class="cn.gzccc.bbs.action.LoginAction" desc="用户登录">
+		<view>/views/forum/Welcome.jsp</view>
+	</action>
+	<action name="Append.bbs" class="cn.gzccc.bbs.action.AppendAction" desc="发帖">
+		<view>/views/forum/Append.jsp</view>
+	</action>
 </actionlist>

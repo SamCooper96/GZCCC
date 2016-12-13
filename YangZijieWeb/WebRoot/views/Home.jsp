@@ -51,8 +51,8 @@
 			</tr>
 			<tr>
 				<td>6</td>
-				<td><a href="#">xxx</a></td>
-				<td></td>
+				<td><a href="<%=path%>/views/forum/Login.jsp">906车技交流</a></td>
+				<td>基于MVC模式的论坛（发帖、跟帖）</td>
 			</tr>
 			<tr>
 				<td>7</td>
